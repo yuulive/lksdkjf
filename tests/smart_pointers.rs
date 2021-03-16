@@ -1,5 +1,5 @@
 use core::fmt::Debug;
-use rusteval::{Interactive, InteractiveRoot};
+use oy::{Interactive, InteractiveRoot};
 use std::rc::Rc;
 
 #[derive(Interactive, Debug, Default)]

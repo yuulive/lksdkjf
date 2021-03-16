@@ -1,10 +1,10 @@
 [package]
-name = "rusteval-derive"
-description = "macros for rusteval"
+name = "oy-derive"
+description = "macros for oy"
 version = "0.1.1"
 authors = ["Dimitri Polonski"]
 edition = "2018"
-repository = "https://github.com/dimpolo/rusteval/"
+repository = "https://github.com/dimpolo/oy/"
 license = "MIT OR Apache-2.0"
 
 [lib]

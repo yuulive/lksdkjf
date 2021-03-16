@@ -1,10 +1,10 @@
 [package]
-name = "rusteval"
-description = "Make your application's structs and functions interactive"
+name = "oy"
+description = "Oy makes your application's structs and functions interactive"
 version = "0.1.0"
 authors = ["Dimitri Polonski"]
 edition = "2018"
-repository = "https://github.com/dimpolo/rusteval/"
+repository = "https://github.com/yuulive/oy/"
 license = "MIT OR Apache-2.0"
 categories = [
     "command-line-interface",
@@ -20,14 +20,14 @@ keywords = [
 ]
 
 [dependencies]
-rusteval-derive = { version = "0.1", default-features = false}
+oy-derive = { version = "0.1", default-features = false, path = "oy-derive"}
 core-error = "0.0.1-rc4"
 inventory = { version = "0.1.9", optional = true }
 lazy_static = { version = "1", optional = true }
 
 [features]
 default = ["std", "inventory", "lazy_static"]
-std = ["core-error/std", "rusteval-derive/std"]
+std = ["core-error/std", "oy-derive/std"]
 
 [[example]]
 name = "minimal"

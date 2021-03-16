@@ -37,7 +37,7 @@
 //!
 //! # Example
 //! ```
-//! use rusteval::{Interactive, Methods, InteractiveRoot, Function, PartialDebug};
+//! use oy::{Interactive, Methods, InteractiveRoot, Function, PartialDebug};
 //!
 //! #[derive(Default)]
 //! struct NoDebug;
@@ -87,8 +87,8 @@
 //!
 //! The macros then implement getters that look something like this:
 //! ```
-//! # use rusteval::*;
-//! # use rusteval::specialization::*;
+//! # use oy::*;
+//! # use oy::specialization::*;
 //! # struct Stub {
 //! #     field1: (),
 //! #     field2: (),
@@ -133,7 +133,7 @@
 ///
 ///
 /// ```
-/// use rusteval::{Interactive, InteractiveRoot, Methods, Function};
+/// use oy::{Interactive, InteractiveRoot, Methods, Function};
 ///
 /// #[derive(Interactive)]
 /// struct SomethingInteractive;
@@ -161,13 +161,13 @@
 /// assert_eq!(root.eval_to_string("field.ping()"), "\"pong\"");
 /// assert_eq!(root.eval_to_string("add_one(42)"), "43");
 /// ```
-pub use rusteval_derive::InteractiveRoot;
+pub use oy_derive::InteractiveRoot;
 
 /// Gives interactive access to a structs fields.
 ///
 /// # What it does:
 /// ```
-/// # use rusteval::Interactive;
+/// # use oy::Interactive;
 /// #
 /// #[derive(Interactive)]
 /// struct Struct {
@@ -177,9 +177,9 @@ pub use rusteval_derive::InteractiveRoot;
 /// ```
 /// Expands to something like:
 /// ```
-/// # use rusteval::*;
-/// # use rusteval::specialization::*;
-/// # use rusteval::InteractiveError::*;
+/// # use oy::*;
+/// # use oy::specialization::*;
+/// # use oy::InteractiveError::*;
 /// # use core::fmt::Debug;
 /// #
 /// # struct Struct {
@@ -213,7 +213,7 @@ pub use rusteval_derive::InteractiveRoot;
 ///     }
 /// }
 /// ```
-pub use rusteval_derive::Interactive;
+pub use oy_derive::Interactive;
 
 /// Gives interactive access to a structs methods.
 ///
@@ -232,7 +232,7 @@ pub use rusteval_derive::Interactive;
 ///
 /// # What it does:
 /// ```
-/// # use rusteval::Methods;
+/// # use oy::Methods;
 /// #
 /// # struct Struct;
 /// #
@@ -250,9 +250,9 @@ pub use rusteval_derive::Interactive;
 /// (notice how `frob` is only available inside `eval_method_mut`)
 /// ```
 /// # use core::fmt::Debug;
-/// # use rusteval::*;
-/// # use rusteval::arg_parse::*;
-/// # use rusteval::InteractiveError::*;
+/// # use oy::*;
+/// # use oy::arg_parse::*;
+/// # use oy::InteractiveError::*;
 /// #
 /// # struct Struct;
 /// #
@@ -299,7 +299,7 @@ pub use rusteval_derive::Interactive;
 ///     }
 /// }
 /// ```
-pub use rusteval_derive::Methods;
+pub use oy_derive::Methods;
 
 /// Implements [`Debug`] for a struct replacing all fields that do not implement `Debug` with a placeholder.
 ///
@@ -307,7 +307,7 @@ pub use rusteval_derive::Methods;
 ///
 /// # What it does:
 /// ```
-/// # use rusteval::PartialDebug;
+/// # use oy::PartialDebug;
 ///
 /// struct NoDebug;
 ///
@@ -321,7 +321,7 @@ pub use rusteval_derive::Methods;
 /// ```
 /// # use std::fmt::Debug;
 /// # use core::fmt;
-/// # use rusteval::specialization::AsDebug;
+/// # use oy::specialization::AsDebug;
 /// #
 /// # struct NoDebug;
 /// # struct Struct {
@@ -335,7 +335,7 @@ pub use rusteval_derive::Methods;
 ///                 "field",
 ///                 match &self.field.try_as_debug() {
 ///                     Ok(field) => field,
-///                     Err(_) => &rusteval::specialization::Unknown,
+///                     Err(_) => &oy::specialization::Unknown,
 ///                 },
 ///             )
 ///             .finish()
@@ -343,7 +343,7 @@ pub use rusteval_derive::Methods;
 /// }
 ///
 /// ```
-pub use rusteval_derive::PartialDebug;
+pub use oy_derive::PartialDebug;
 
 /// Gives interactive access to a function.
 ///
@@ -359,7 +359,7 @@ pub use rusteval_derive::PartialDebug;
 /// [link]: macro@crate::InteractiveRoot
 /// # What it does:
 /// ```
-/// # use rusteval::Function;
+/// # use oy::Function;
 /// #
 /// #[Function]
 /// fn add_one(a: u32) -> u32 {
@@ -369,9 +369,9 @@ pub use rusteval_derive::PartialDebug;
 /// Expands to something like:
 /// ```
 /// # use core::fmt::Debug;
-/// # use rusteval::*;
-/// # use rusteval::arg_parse::*;
-/// # use rusteval::inventory;
+/// # use oy::*;
+/// # use oy::arg_parse::*;
+/// # use oy::inventory;
 ///
 /// # fn add_one(a: u32) -> u32 {
 /// #     a + 1
@@ -390,12 +390,12 @@ pub use rusteval_derive::PartialDebug;
 ///     }
 /// }
 /// inventory::submit! {
-///     &FunctionXYZ as &dyn::rusteval::Function
+///     &FunctionXYZ as &dyn::oy::Function
 /// }
 ///
 /// ```
 #[cfg(feature = "std")]
-pub use rusteval_derive::Function;
+pub use oy_derive::Function;
 
 pub use error::{ArgParseError, InteractiveError, Result};
 #[cfg(feature = "std")]

@@ -1,4 +1,4 @@
-use rusteval::{Interactive, InteractiveRoot, PartialDebug};
+use oy::{Interactive, InteractiveRoot, PartialDebug};
 
 #[derive(Interactive, Default)]
 struct NotDebug {

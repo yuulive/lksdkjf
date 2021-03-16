@@ -1,11 +1,11 @@
 #![no_implicit_prelude]
-use ::rusteval::{Function, Interactive, InteractiveRoot, Methods, PartialDebug};
+use ::oy::{Function, Interactive, InteractiveRoot, Methods, PartialDebug};
 
 // These are required for now
 use ::core::ops::*;
 use ::core::option::Option::*;
 use ::core::result::Result::*;
-use ::rusteval::inventory;
+use ::oy::inventory;
 
 struct NoDebug;
 

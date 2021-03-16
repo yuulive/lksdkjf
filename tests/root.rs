@@ -1,7 +1,7 @@
 #![feature(str_split_once)]
 
 use core::fmt::Debug;
-use rusteval::{Interactive, InteractiveError, InteractiveRoot, Methods};
+use oy::{Interactive, InteractiveError, InteractiveRoot, Methods};
 
 #[derive(Interactive, Debug, Default)]
 struct TestStruct {
@@ -91,7 +91,7 @@ fn test_call_with_different_arg_types() {
 
 #[test]
 fn test_call_with_bad_args() {
-    use rusteval::ArgParseError;
+    use oy::ArgParseError;
 
     let mut root = Root::default();
     assert_eq!(

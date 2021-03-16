@@ -1,4 +1,4 @@
-use rusteval::{Interactive, Methods};
+use oy::{Interactive, Methods};
 
 #[derive(Interactive, Debug, Default)]
 struct TestStruct {

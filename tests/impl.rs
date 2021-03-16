@@ -1,4 +1,4 @@
-use rusteval::{InteractiveError, Methods};
+use oy::{InteractiveError, Methods};
 
 #[derive(Debug, Default)]
 struct TestStruct {
@@ -48,7 +48,7 @@ fn test_call_no_args_no_return() {
 
 #[test]
 fn test_method_not_found() {
-    use rusteval::InteractiveError;
+    use oy::InteractiveError;
 
     let mut test_struct = TestStruct::default();
 

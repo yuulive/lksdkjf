@@ -1,5 +1,5 @@
 use arrayvec::ArrayString;
-use rusteval::{Interactive, InteractiveRoot, Methods};
+use oy::{Interactive, InteractiveRoot, Methods};
 
 #[derive(Interactive, Default)]
 struct ChildStruct {}

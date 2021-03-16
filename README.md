@@ -1,4 +1,4 @@
-# rusteval
+# oy
 
 This crate provides traits and macros that make your application's structs and functions interactive.
 
@@ -39,7 +39,7 @@ Have a look at the autocomplete example for how this might be done using the [ru
 
 ## Example
 ```rust
-use rusteval::{Interactive, Methods, InteractiveRoot, Function, PartialDebug};
+use oy::{Interactive, Methods, InteractiveRoot, Function, PartialDebug};
 
 #[derive(Default)]
 struct NoDebug;

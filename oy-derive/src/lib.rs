@@ -1,4 +1,4 @@
-//! Procedural macros for the [rusteval](https://docs.rs/rusteval/0.1.0/rusteval/) crate.
+//! Procedural macros for the [oy](https://docs.rs/oy/0.1.0/oy/) crate.
 //! Don't use this crate directly.
 // TODO correct link
 
